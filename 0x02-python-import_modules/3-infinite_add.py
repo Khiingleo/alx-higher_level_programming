@@ -2,8 +2,7 @@
 if __name__ == "__main__":
     from sys import argv
 
-    count = len(argv) - 1
     result = 0
-    for i in range(count):
-        result += int(argv[i + 1])
+    for i in range(1, len(argv)):
+        result += int(argv[i])
     print(f"{result}")

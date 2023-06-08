@@ -4,17 +4,16 @@ if __name__ == "__main__":
     from sys import argv
 
     if len(argv) != 4:
-        print("Usage {} <a> <operator> <b>")
+        print("Usage: {} <a> <operator> <b>".format(argv[0]))
         exit(1)
 
-
-    operator = argv[2]
+    op = argv[2]
     lists = {"+": add, "-": sub, "*": mul, "/": div}
-    if operator not in lists:
+    if op not in list(lists.keys()):
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
 
 
     a = int(argv[1])
     b = int(argv[3])
-    print("{} {} {} = {}".format(a, operator, b, lists[operator](a, b)))
+    print("{} {} {} = {}".format(a, op, b, lists[op](a, b)))

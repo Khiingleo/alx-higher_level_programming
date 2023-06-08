@@ -13,7 +13,6 @@ if __name__ == "__main__":
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
 
-
     a = int(argv[1])
     b = int(argv[3])
     print("{} {} {} = {}".format(a, op, b, lists[op](a, b)))

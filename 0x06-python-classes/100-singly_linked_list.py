@@ -33,9 +33,9 @@ class Node:
         Raises:
             TypeError: if data is not an int
         """
-        if not isinstance(data, int):
+        if not isinstance(value, int):
             raise TypeError("data must be an integer")
-        self.__date = value
+        self.__data = value
 
     @property
     def next_node(self):
@@ -52,7 +52,7 @@ class Node:
         Raises:
             TypeError: if value is not a Node
         """
-        if not isinstance(value, Node):
+        if not isinstance(value, Node) and value is not None:
             raise TypeError("next_node must be an Node object")
         self.__next_node = value
 
@@ -66,13 +66,13 @@ class SinglyLinkedList:
         """
         self.__head = None
 
-    def ___str___(self):
+    def __str__(self):
         """
         sets the way the print() is represented in the singly linked list
         """
         nodes = []
         current = self.__head
-        while current:
+        while current is not None:
             nodes.append(str(current.data))
             current = current.next_node
         return '\n'.join(nodes)
@@ -85,7 +85,10 @@ class SinglyLinkedList:
             value (Node): node to be inserted
         """
         new_node = Node(value)
-        if self.__head is None or value < self.__head.data:
+        if self.__head is None:
+            new_node.next_node = None
+            self.__head = new_node
+        elif self.__head.data > value:
             new_node.next_node = self.__head
             self.__head = new_node
         else:

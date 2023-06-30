@@ -1,4 +1,4 @@
-How to use
+# How to use
 
 First import the method to test:
 >>> add_integer = __import__('0-add_integer').add_integer
@@ -11,7 +11,7 @@ TEST CASES
 
 2. Test with one integer and one float:
 	>>> add_integer(100, -2.5)
-	97
+	98
 
 3. Test with one integer and no second argument(uses default value):
 	>>> add_integer(2)
@@ -34,16 +34,16 @@ TEST CASES
 	TypeError: a must be an integer
 
 7. Test with None as both arguments:
-	>>> add_integer(None, None):
+	>>> add_integer(None, None)
 	Traceback (most recent call last):
 	...
 	TypeError: a must be an integer
 
 8. Test with extra arguments:
-	>>> add_integer(1, 5, 6))
+	>>> add_integer(1, 5, 6)
 	Traceback (most recent call last):
 	...
-	TypeError: add_integer() takes 1 to 2 positional arguments but 3 were given
+	TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
 
 9. Test with infinity:
 	>>> add_integer(float('inf'), 10)

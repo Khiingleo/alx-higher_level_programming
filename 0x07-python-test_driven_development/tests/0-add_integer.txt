@@ -1,0 +1,58 @@
+How to use
+
+First import the method to test:
+>>> add_integer = __import__('0-add_integer').add_integer
+
+TEST CASES
+
+1. Test with two integers:
+	>>> add_integer(1, 2)
+	3
+
+2. Test with one integer and one float:
+	>>> add_integer(100, -2.5)
+	97
+
+3. Test with one integer and no second argument(uses default value):
+	>>> add_integer(2)
+	100
+
+4. Test with one float and one integer:
+	>>> add_integer(100.3, -2)
+	98
+
+5. Test with one integer and a non-integer string:
+	>>> add_integer(4, "School")
+	Traceback (most recent call last):
+     	...
+	TypeError: b must be an integer
+
+6. Test with None as the first argument:
+	>>> add_integer(None)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+7. Test with None as both arguments:
+	>>> add_integer(None, None):
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+8. Test with extra arguments:
+	>>> add_integer(1, 5, 6))
+	Traceback (most recent call last):
+	...
+	TypeError: add_integer() takes 1 to 2 positional arguments but 3 were given
+
+9. Test with infinity:
+	>>> add_integer(float('inf'), 10)
+	Traceback (most recent call last):
+	...
+	OverflowError: cannot convert float infinity to integer
+
+10. Test with NaN:
+	>>> add_integer(float('NaN'))
+	Traceback (most recent call last):
+	...
+	ValueError: cannot convert float NaN to integer

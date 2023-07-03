@@ -5,6 +5,9 @@
 class Rectangle:
     """Represents a rectangle object"""
 
+    number_of_instances = 0
+    print_symbol = "#"
+
     def __init__(self, width=0, height=0):
         """
         Initializes a new rectangle object
@@ -15,6 +18,8 @@ class Rectangle:
         """
         self.width = width
         self.height = height
+
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -69,7 +74,7 @@ class Rectangle:
 
         res = []
         for i in range(self.__height):
-            [res.append("#") for _ in range(self.__width)]
+            [res.append(str(self.print_symbol)) for _ in range(self.__width)]
             if i != self.__height - 1:
                 res.append('\n')
         return "".join(res)
@@ -81,3 +86,5 @@ class Rectangle:
     def __del__(self):
         """destructor for the rectangle object"""
         print("Bye rectangle...")
+
+        Rectangle.number_of_instances -= 1

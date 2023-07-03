@@ -1,0 +1,36 @@
+# TEST CASES FOR say_my_name FUNCTION
+
+First import method
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Test cases
+1. Test with two names given:
+	>>> say_my_name("King", "Leo")
+	My name is King Leo
+
+2. Test with only one name given(uses default string):
+	>>> say_my_name("King")
+	My name is King 
+
+3. Test with other data types(not using strings):
+	>>> say_my_name(52, "Leo")
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+	
+	>>> say_my_name("King", 21)
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string
+
+4. Test with too few args:
+	>>> say_my_name()
+	Traceback (most recent call last):
+	...
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+5. Test with too much args:
+	>>> say_my_name("King", "John", "leo")
+	Traceback (most recent call last):
+	...
+	TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given

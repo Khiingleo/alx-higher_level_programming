@@ -1,0 +1,59 @@
+# TEST CASES FOR THE print_square FUNCTION
+
+First import the module:
+>>> print_square = __import__('4-print_square').print_square
+
+TEST CASES
+1. Test with positive size given:
+	>>> print_square(5)
+	#####
+	#####
+	#####
+	#####
+	#####
+
+	>>> print_square(0)
+	
+
+	>>> print_square(1)
+	#
+
+2. Test with negative size given:
+	>>> print_square(-3)
+	Traceback (most recent call last):
+	...
+	ValueError: size must be >= 0
+
+3. Test with float and float value less than 0:
+	>>> print_square(-3.3)
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+	>>> print_square(2.5)
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+4. Test with other type:
+	>>> print_square("hello")
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+	>>> print_square([1, 2])
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+5. Test with too few args:
+	>>> print_square()
+	Traceback (most recent call last):
+	...
+	TypeError: print_square() missing 1 required positional argument: 'size'
+
+6. Test with too much args:
+	>>> print_square(2, 5)
+	Traceback (most recent call last):
+	...
+	TypeError: print_square() takes 1 positional argument but 2 were given

@@ -1,0 +1,47 @@
+# TEST CASES FOR THE text_indentation FUNCTION
+
+first import the module
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+TEST CASES
+1. Test with a string
+	>>> text_indentation("""This is my story. This is my song? This is a bunch of rubbish text. \
+	... This teaches: how to be a good person, how to know when to speak. or when not to speak? \
+	... This is the end of my story. Thank you for reading""")
+	This is my story.
+	<BLANKLINE>
+	This is my song?
+	<BLANKLINE>
+	This is a bunch of rubbish text.
+	<BLANKLINE>
+	This teaches:
+	<BLANKLINE>
+	how to be a good person, how to know when to speak.
+	<BLANKLINE>
+	or when not to speak?
+	<BLANKLINE>
+	This is the end of my story.
+	<BLANKLINE>
+	Thank you for reading
+
+2. Test with spaces:
+	>>> text_indentation("  Hello.  I am Leo:   Or am I?  Goodbye.  ")
+	Hello.
+	<BLANKLINE>
+	I am Leo:
+	<BLANKLINE>
+	Or am I?
+	<BLANKLINE>
+	Goodbye.
+	<BLANKLINE>
+
+3. Test with other data types:
+	>>> text_indentation(21)
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+
+4. Test with empty string:
+	>>> text_indentation("    ")
+	
+

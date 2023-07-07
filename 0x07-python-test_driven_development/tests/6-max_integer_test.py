@@ -34,7 +34,7 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_string(self):
         """test with string"""
-        self.assertEqual(max_integer("hello"), "hi")
+        self.assertEqual(max_integer("creamer"), "r")
 
     def test_floats(self):
         """test with floats"""
@@ -42,8 +42,8 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_string_list(self):
         """ test with string list"""
-        lists = ["this", "is", "a", "list"]
-        self.assertEqual(max_integer(lists), "lists")
+        lists = ["John", "is", "my", "name"]
+        self.assertEqual(max_integer(lists), "name")
 
 
 if __name__ == '__main__':

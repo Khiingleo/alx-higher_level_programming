@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""Unitest for max_integer([...])
-"""
+"""Unitest for max_integer([...])"""
 import unittest
 max_integer = __import__('6-max_integer').max_integer
+
 
 class TestMaxInteger(unittest.TestCase):
     def test_empty_list(self):
@@ -39,11 +39,12 @@ class TestMaxInteger(unittest.TestCase):
     def test_floats(self):
         """test with floats"""
         self.assertEqual(max_integer([1.53, 6.33, -9.123, 15.2, 6.9]), 15.2)
-    
+
     def test_string_list(self):
         """ test with string list"""
         lists = ["this", "is", "a", "list"]
         self.assertEqual(max_integer(lists), "lists")
+
 
 if __name__ == '__main__':
     unittest.main()

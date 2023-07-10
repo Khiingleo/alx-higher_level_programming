@@ -1,0 +1,67 @@
+# Test cases for the BaseGeometry class
+
+import methof
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+1. Test calling area without implementation
+	>>> base_geometry = BaseGeometry()
+	>>> base_geometry.area()
+	Traceback (most recent call last):
+	...
+	Exception: area() is not implemented
+
+2. valid integer validation # no exception expected
+	>>> base_geometry = BaseGeometry()
+	>>> base_geometry.integer_validator("Width", 5)
+
+3. test with value less than 0:
+	>>> base_geometry = BaseGeometry()
+	>>> base_geometry.integer_validator("Length", 0)
+	Traceback (most recent call last):
+	...
+	ValueError: Length must be greater than 0
+
+	>>> base_geometry = BaseGeometry()
+	>>> base_geometry.integer_validator("Length", -5)
+	Traceback (most recent call last):
+	...
+	ValueError: Length must be greater than 0
+
+4. Test with value as not an integer
+	>>> base_geometry = BaseGeometry()
+	>>> base_geometry.integer_validator("Height", "ten")
+	Traceback (most recent call last):
+	...
+	TypeError: Height must be an integer
+
+	>>> base_geometry = BaseGeometry()
+	>>> base_geometry.integer_validator("Height", 23.32)
+	Traceback (most recent call last):
+	...
+	TypeError: Height must be an integer
+
+	>>> base_geometry = BaseGeometry()
+	>>> base_geometry.integer_validator("Height", (1, 2, 3))
+	Traceback (most recent call last):
+	...
+	TypeError: Height must be an integer
+
+	>>> base_geometry = BaseGeometry()
+	>>> base_geometry.integer_validator("Height", [1, 2, 3])
+	Traceback (most recent call last):
+	...
+	TypeError: Height must be an integer
+
+
+5. Test with invalid num of args:
+	>>> base_geometry = BaseGeometry()
+	>>> base_geometry.integer_validator("height")
+	Traceback (most recent call last):
+	...
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+	>>> base_geometry = BaseGeometry()
+	>>> base_geometry.integer_validator()
+	Traceback (most recent call last):
+	...
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'

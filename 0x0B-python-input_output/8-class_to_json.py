@@ -6,11 +6,9 @@ import json
 def class_to_json(obj):
     """
     Converts an object to a dictionary description for
-    JSON serialization
+    JSON serializion
 
     Args:
-        obj: An instance of a class
-    Returns:
-        A dictionary representation of the object
+        obj (object): instance of class
     """
     return obj.__dict__

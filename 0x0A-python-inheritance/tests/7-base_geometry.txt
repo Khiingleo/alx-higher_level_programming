@@ -52,6 +52,24 @@ import methof
 	...
 	TypeError: Height must be an integer
 
+	>>> base_geometry = BaseGeometry()
+	>>> base_geometry.integer_validator("Height", None)
+	Traceback (most recent call last):
+	...
+	TypeError: Height must be an integer
+
+	>>> base_geometry = BaseGeometry()
+	>>> base_geometry.integer_validator("Height", True)
+	Traceback (most recent call last):
+	...
+	TypeError: Height must be an integer
+
+	>>> base_geometry = BaseGeometry()
+	>>> base_geometry.integer_validator("Height", {3, 4})
+	Traceback (most recent call last):
+	...
+	TypeError: Height must be an integer
+
 
 5. Test with invalid num of args:
 	>>> base_geometry = BaseGeometry()

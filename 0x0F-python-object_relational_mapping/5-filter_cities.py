@@ -18,13 +18,13 @@ if __name__ == "__main__":
         query = """SELECT cities.name
                    FROM cities
                    INNER JOIN states ON cities.state_id = states.id
-                   WHERE states.name LIKE %s
+                   WHERE states.name = %s
                    ORDER BY cities.id ASC"""
 
         cur.execute(query, (argv[4],))
 
         rows = cur.fetchall()
-        print(", ".join(["{}".format(row[0]) for row in rows]))
+        print(", ".join(["{:s}".format(row[0]) for row in rows]))
 
         cur.close()
         db.close()

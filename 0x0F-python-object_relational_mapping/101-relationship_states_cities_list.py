@@ -15,7 +15,7 @@ if __name__ == "__main__":
     user, passwd, db = argv[1], argv[2], argv[3]
 
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}".
-                            format(user, passwd, db), pool_pre_ping=True)
+                           format(user, passwd, db), pool_pre_ping=True)
 
     Session = sessionmaker(bind=engine)
     session = Session()

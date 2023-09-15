@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 """
-lists all State objects that contain the letter 'a'
+prints the State object with the 'name' passed as argumment from
+the database
 """
 
 from sys import argv
+from sqlalchemy import create_engine
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import create_engine
 
 
 if __name__ == "__main__":
@@ -18,11 +19,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for state in session.query(State).filter(
-            State.name.like('%a%')).order_by(State.id):
-        print("{}: {}".format(state.id, state.name))
+    state = session.query(State).filter(State.name == argv[4]).first()
 
-    # for state in session.query(State).order_by(State.id):
-    #   if "a" in State.name:
-    #       print("{}: {}".format(state.id, state.name))
+    if state is not None:
+        print(state.id)
+    else:
+        print("Not found")
+
     session.close()

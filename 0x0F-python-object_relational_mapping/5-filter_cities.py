@@ -18,7 +18,7 @@ if __name__ == "__main__":
         query = """SELECT cities.name
                    FROM cities
                    INNER JOIN states ON cities.state_id = states.id
-                   WHERE states.name = %s
+                   WHERE states.name LIKE %s
                    ORDER BY cities.id ASC"""
 
         cur.execute(query, (argv[4],))

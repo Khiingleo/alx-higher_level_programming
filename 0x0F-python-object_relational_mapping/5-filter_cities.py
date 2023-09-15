@@ -24,10 +24,9 @@ if __name__ == "__main__":
         cur.execute(query, (argv[4],))
 
         rows = cur.fetchall()
-        print(", ".join(["{:s}".format(row[0]) for row in rows]))
+        print(", ".join(["{}".format(row[0]) for row in rows]))
 
         cur.close()
         db.close()
-
     except MySQLdb.Error as e:
-        print(f"MySQL Error: {e})
+        print(f"MySQL Error: {e}")

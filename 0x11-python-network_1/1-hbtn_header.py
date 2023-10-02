@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-takes in a URL and sends a request to the URL and displays the value of 
+takes in a URL and sends a request to the URL and displays the value of
 X-Request-Id variable found in the header of the response
 """
 import urllib.request
